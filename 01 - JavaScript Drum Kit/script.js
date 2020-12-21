@@ -10,14 +10,14 @@ const sound = {
   l: "tink",
 };
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keypress", function (e) {
   if (e.key in sound) {
     const fileName = `sounds/${sound[e.key]}.wav`;
     const audio = new Audio(fileName);
     audio.play();
     document.querySelector(`#${e.key}`).classList.add("playing");
 
-    // Method 1: setTimeout fnction
+    // Method 1: setTimeout function
     // setTimeout(function () {
     //   document.querySelector(`#${e.key}`).classList.remove("playing");
     // }, 10);
